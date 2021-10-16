@@ -23,10 +23,10 @@ public interface TeaRepository extends JpaRepository<Tea,String> {
             "       GROUP_CONCAT(DISTINCT k.name) AS keyword,\n" +
             "       GROUP_CONCAT(DISTINCT o.name)  AS origin\n" +
             "FROM tea.tea AS t \n" +
-            "         INNER JOIN tea.tea_keyword tk on t.id = tk.tea_id\n" +
-            "         INNER JOIN tea.keyword k on tk.keyword_id = k.id\n" +
-            "         INNER JOIN tea.tea_origin ok on t.id = ok.tea_id\n" +
-            "         INNER JOIN tea.origin o on ok.origin_id = o.id\n" +
+            "         INNER JOIN tea.tea_keyword tk on t.id = tk.tea_id \n" +
+            "         INNER JOIN tea.keyword k on tk.keyword_id = k.id \n" +
+            "         INNER JOIN tea.tea_origin ok on t.id = ok.tea_id \n" +
+            "         INNER JOIN tea.origin o on ok.origin_id = o.id \n" +
             "WHERE\n" +
             "      t.name LIKE %:key% OR\n" +
             "      t.collection LIKE %:key% OR\n" +
